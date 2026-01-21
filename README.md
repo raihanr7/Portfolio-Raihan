@@ -4,11 +4,11 @@ Personal portfolio website showcasing my experience in data analysis, research, 
 
 ## 🚀 Live Demo
 
-[View Portfolio](https://raihanr7.github.io/Portfolio-New) _(update with your actual GitHub Pages URL)_
+[View Portfolio] (https://www.raihanrizqullahportofolio.site/)
 
 ## 👨‍💻 About
 
-I'm a recent graduate with experience in:
+I have experience using tools for:
 
 - **Data Analysis** - Python, SQL, PostgreSQL, Excel, PowerBI
 - **Research** - Oceanographic data processing (MATLAB, Python)
@@ -59,4 +59,4 @@ I'm a recent graduate with experience in:
 
 ---
 
-**Note:** This portfolio is continuously updated. Check back for new projects and experience!
+**Note:** This portfolio is continuously updated. Check back for new projects and experience! hehe!
