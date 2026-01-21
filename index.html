@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,7 +16,6 @@
       --accent2: #0ea5e9;
       --shadow: 0 4px 20px rgba(0, 0, 0, .06)
     }
-
     [data-theme="dark"] {
       --bg: #0a0a0a;
       --text: #f3f4f6;
@@ -26,11 +24,9 @@
       --border: #1f2937;
       --shadow: 0 6px 30px rgba(0, 0, 0, .35)
     }
-
     * {
       box-sizing: border-box
     }
-
     html,
     body {
       margin: 0;
@@ -39,18 +35,15 @@
       color: var(--text);
       font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif
     }
-
     a {
       color: inherit;
       text-decoration: none
     }
-
     .container {
       width: min(1120px, 92vw);
       margin-inline: auto
     }
-
-    /* Navbar */
+    
     .nav {
       position: sticky;
       top: 0;
@@ -59,37 +52,31 @@
       border-bottom: 1px solid var(--border);
       background: color-mix(in srgb, var(--bg) 70%, transparent)
     }
-
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 64px
     }
-
     .brand {
       display: flex;
       gap: .5rem;
       align-items: center;
       font-weight: 700
     }
-
     .dot {
       width: 28px;
       height: 28px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--accent1), var(--accent2))
     }
-
     .nav a {
       font-size: .92rem;
       opacity: .85
     }
-
     .nav a:hover {
       opacity: 1
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -101,23 +88,19 @@
       cursor: pointer;
       font-size: .9rem
     }
-
     .btn.primary {
       border-color: transparent;
       color: #fff;
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
       box-shadow: var(--shadow)
     }
-
     .muted {
       color: var(--muted)
     }
-
     .hero {
       position: relative;
       overflow: hidden
     }
-
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -126,21 +109,18 @@
         radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--accent1) 25%, transparent), transparent 60%),
         radial-gradient(40% 35% at 90% 10%, color-mix(in srgb, var(--accent2) 25%, transparent), transparent 60%)
     }
-
     .h1 {
       font-size: clamp(28px, 4.2vw, 52px);
       line-height: 1.15;
       margin: 8px 0 0 0;
       font-weight: 800
     }
-
     .gradient {
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent
     }
-
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -149,120 +129,97 @@
       box-shadow: var(--shadow);
       transition: transform .2s ease, box-shadow .2s ease
     }
-
     .card:hover {
       transform: translateY(-2px)
     }
-
     a.card-link {
       display: block;
       cursor: pointer
     }
-
     a.card-link:hover .card {
       transform: translateY(-4px);
       box-shadow: 0 8px 30px rgba(0, 0, 0, .12)
     }
-
     .card-cover {
       position: relative;
       height: 148px;
       overflow: hidden
     }
-
     .card-cover img {
       width: 100%;
       height: 100%;
       object-fit: cover
     }
-
     .card-body {
       padding: 18px
     }
-
     .card-body p {
       text-align: justify;
     }
-
     .grid {
       display: grid;
       gap: 18px
     }
-
     @media(min-width:640px) {
       .grid.cols-2 {
         grid-template-columns: repeat(2, 1fr)
       }
     }
-
     @media(min-width:960px) {
       .grid.cols-3 {
         grid-template-columns: repeat(3, 1fr)
       }
     }
-
     .section {
       padding: 8px 0
     }
-
     #about {
       padding-top: 6px
     }
-
     .section h2 {
       font-size: clamp(22px, 3.2vw, 34px);
       margin: 0 0 10px 0
     }
-
     .section p.lead {
       margin: 0 0 20px 0
     }
-
     .flex {
       display: flex;
       gap: 12px;
       align-items: center
     }
-
     .between {
       justify-content: space-between
     }
-
     .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 8px
     }
-
     .h3 {
       font-size: 1.02rem;
       margin: 0
     }
-
     .small {
       font-size: .8rem
     }
-
     .pill {
       border: 1px solid var(--border);
       padding: .2rem .6rem;
       border-radius: 999px;
       font-size: .76rem
     }
-
     .section-title {
       display: flex;
       align-items: center;
       gap: 10px;
       margin: 0 0 14px 0
     }
-
     .filters {
       display: flex;
       gap: 8px;
       margin: 0 0 18px 0
     }
-
     .filter-btn {
       border: 1px solid var(--border);
       background: transparent;
@@ -271,13 +228,11 @@
       font-size: .9rem;
       cursor: pointer
     }
-
     .filter-btn.active {
       color: #fff;
       border-color: transparent;
       background: linear-gradient(90deg, var(--accent1), var(--accent2))
     }
-
     .footer {
       border-top: 1px solid var(--border);
       padding: 24px 0;
@@ -285,9 +240,7 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- NAVBAR -->
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#home" class="brand"><span class="dot"></span>Raihan Rizqullah</a>
@@ -299,8 +252,6 @@
       </div>
     </div>
   </nav>
-
-  <!-- HERO -->
   <header id="home" class="hero">
     <div class="hero-bg"></div>
     <div class="container" style="padding:64px 0 36px 0; display:flex; align-items:center; gap:40px;">
@@ -322,14 +273,9 @@
       </div>
     </div>
   </header>
-
-
-  <!-- SKILLS -->
   <section id="about" class="section">
     <div class="container">
       <h2 class="section-title"><span class="gradient" style="font-weight:800">Skills & Tools</span></h2>
-      
-      <!-- Skills - 3 Column Grid -->
       <div class="grid cols-3">
         <div class="card">
           <div class="card-body">
@@ -343,7 +289,6 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-body">
             <h3 class="h3" style="margin-bottom:10px">GIS & Mapping</h3>
@@ -354,7 +299,6 @@
             </div>
           </div>
         </div>
-
         <div class="card">
           <div class="card-body">
             <h3 class="h3" style="margin-bottom:10px">Tools & Platforms</h3>
@@ -374,24 +318,16 @@
       </div>
     </div>
   </section>
-
-  <!-- EXPERIENCE -->
   <section id="experience" class="section">
     <div class="container">
       <h2 class="section-title"><span class="gradient" style="font-weight:800">Experience</span></h2>
-
-      <!-- Filters (multi-select) -->
       <div class="filters">
         <button class="filter-btn active" data-filter="Professional">Professional</button>
         <button class="filter-btn active" data-filter="Freelance">Freelance/Project</button>
       </div>
-
-      <!-- PROFESSIONAL BLOCK -->
       <div class="block" data-category="Professional">
         <h3 class="h2" style="margin:10px 0 14px 0">Professional</h3>
         <div class="grid cols-2 cols-3">
-
-          <!-- CARD — Telkom -->
           <a href="experience-telkom.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -412,8 +348,6 @@
               </div>
             </article>
           </a>
-
-          <!-- CARD — Research (WPP 573) -->
           <a href="experience-brin.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -433,8 +367,6 @@
               </div>
             </article>
           </a>
-
-          <!-- CARD — Big Data -->
           <a href="experience-bigdata1.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -454,7 +386,6 @@
               </div>
             </article>
           </a>
-
           <a href="experience-bigdata2.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -474,10 +405,7 @@
               </div>
             </article>
           </a>
-
-
-          <!-- CARD — Numerical ANalysis -->
-          <a href="experience-Annum.html" class="card-link">
+          <a href="experience-annum.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
                   src="assets/img/bigdata2022/bigdata1.png"
@@ -496,17 +424,11 @@
               </div>
             </article>
           </a>
-        
-
         </div>
       </div>
-
-      <!-- FREELANCE BLOCK -->
       <div class="block" data-category="Freelance">
         <h3 class="h2" style="margin:10px 0 14px 0">Freelance & Project</h3>
         <div class="grid cols-2 cols-3">
-          
-          <!-- CARD — Freelance template -->
           <a href="freelance-paring.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -531,8 +453,7 @@
               </div>
             </article>
           </a>
-
-          <a href="freelance-Pasut.html" class="card-link">
+          <a href="freelance-pasut.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
                   src="assets/img/project-pasut/5.png"
@@ -556,7 +477,6 @@
               </div>
             </article>
           </a>
-
           <a href="freelance-microplastics.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -581,8 +501,6 @@
               </div>
             </article>
           </a>
-
-
           <a href="freelance-fisheries.html" class="card-link">
             <article class="card">
               <div class="card-cover"><img
@@ -607,21 +525,15 @@
               </div>
             </article>
           </a>
-
         </div>
       </div>
     </div>
   </section>
-
-  <!-- CERTIFICATIONS & TRAINING -->
+  
   <section id="certifications" class="section">
     <div class="container">
       <h2 class="section-title"><span class="gradient" style="font-weight:800">Certifications & Training</span></h2>
-      
       <div class="grid cols-2 cols-3">
-        
-        <!-- CARD — Kelas Data -->
-        
           <article class="card">
             <div class="card-body">
               <div class="flex between">
@@ -638,10 +550,6 @@
               </div>
             </div>
           </article>
-        
-
-        <!-- CARD — MySKill -->
-        
           <article class="card">
             <div class="card-body">
               <div class="flex between">
@@ -658,10 +566,6 @@
               </div>
             </div>
           </article>
-        
-
-        <!-- CARD — ArcGIS -->
-        
           <article class="card">
             <div class="card-body">
               <div class="flex between">
@@ -678,10 +582,6 @@
               </div>
             </div>
           </article>
-        
-
-        <!-- CARD — Tsunami -->
-        
           <article class="card">
             <div class="card-body">
               <div class="flex between">
@@ -698,10 +598,6 @@
               </div>
             </div>
           </article>
-        
-
-        <!-- CARD — Bathymetry -->
-        
           <article class="card">
             <div class="card-body">
               <div class="flex between">
@@ -718,13 +614,9 @@
               </div>
             </div>
           </article>
-        
-
       </div>
     </div>
   </section>
-
-  <!-- CONTACT -->
   <section id="contact" class="section">
     <div class="container">
       <h2 class="section-title"><span class="gradient" style="font-weight:800">Contact</span></h2>
@@ -754,19 +646,16 @@
       </div>
     </div>
   </section>
-
   <footer class="footer">
     <div class="container flex between">
       <div class="small muted">© <span id="year"></span> Raihan Rizqullah</div>
       <a href="#home" class="small">Back to top ↑</a>
     </div>
   </footer>
-
   <script>
-    // Year
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle (class-based)
     const html = document.documentElement;
     const themeBtn = document.getElementById('themeToggle');
     themeBtn.addEventListener('click', () => {
@@ -777,10 +666,8 @@
     const saved = localStorage.getItem('theme');
     if (saved) { html.setAttribute('data-theme', saved); }
 
-    // Filters (multi-select with minimum 1 active)
     const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
     const blocks = Array.from(document.querySelectorAll('[data-category]'));
-
     function updateVisibility() {
       const active = filterBtns.filter(b => b.classList.contains('active')).map(b => b.dataset.filter);
       const showAll = active.length === filterBtns.length;
@@ -789,11 +676,10 @@
         b.style.display = (showAll || active.includes(cat)) ? '' : 'none';
       });
     }
-
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const active = filterBtns.filter(b => b.classList.contains('active'));
-        // Prevent unclicking if this is the last active button
+
         if (active.length === 1 && btn.classList.contains('active')) {
           return; // Do nothing - keep at least 1 active
         }
@@ -804,5 +690,4 @@
     updateVisibility();
   </script>
 </body>
-
 </html>

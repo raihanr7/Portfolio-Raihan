@@ -43,7 +43,7 @@
     .pill .tech-icon{font-size:.85rem;margin-right:.25rem}
     .tech-item{display:flex;align-items:center;margin-bottom:.4rem}
     .tech-item .tech-icon{font-size:1.3rem;margin-right:.5rem}
-    /* Brand colors for each tech */
+    
     .si-microsoftexcel{color:#217346}
     .si-python{color:#3776AB}
     .si-postgresql{color:#4169E1}
@@ -54,7 +54,7 @@
     .si-html5{color:#E34F26}
     .small{font-size:.82rem}
     .footer{border-top:1px solid var(--border);padding:20px 0;margin-top:40px}
-    /* Lightbox */
+    
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.76);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
     .lightbox.open{display:flex}
     .lightbox-inner{max-width:min(1000px,92vw);width:100%}
@@ -71,25 +71,18 @@
       </a>
       <div style="display:flex;gap:8px;align-items:center;">
         <a href="index.html#experience" class="btn">← Back to Experience</a>
-        <button id="themeToggle" class="btn" title="Toggle theme">
-          <span class="dot" style="width:12px;height:12px"></span> Theme
-        </button>
       </div>
     </div>
   </nav>
-
   <header class="hero">
     <div class="container">
       <p class="small muted">Freelance</p>
       <h1 class="h1">Marine Tidal Data Analysis and Predict</h1>
     </div>
   </header>
-
   <main>
     <div class="container">
-      <!-- Row 1: Overview + Dokumentasi (2 columns) -->
       <div class="grid grid-cols-2">
-        <!-- Column 1: Overview -->
         <div class="section">
           <div class="card">
             <h2 class="h2">Overview</h2>
@@ -99,8 +92,6 @@
               harmonic analysis of tidal patterns, extracting key tidal constituents and generating <b>long-term predictions until 2050</b> 
               to support oceanographic research and coastal planning.
             </p>
-            
-
             <h2 class="h2" style="margin-top:14px;">Analysis Workflow</h2>
             <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
               <li><b>Data Collection & Preparation</b> - Received tidal water level data from client, performed data cleaning to ensure accuracy</li>
@@ -109,7 +100,6 @@
               <li><b>Long-term Prediction</b> - Generated tidal predictions from analysis period until <b>2050</b> using extracted harmonic constants</li>
               <li><b>Result & Visualization</b> - Created comprehensive plots and delivered analysis results with documentation for thesis research</li>
             </ul>
-
             <h2 class="h2" style="margin-top:14px;">Result</h2>
             <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
               <li>Successfully performed harmonic analysis of tidal data using T_Tide MATLAB package</li>
@@ -117,11 +107,8 @@
               <li>Generated long-term tidal predictions until 2050 for comprehensive analysis</li>
               <li>Produced high-quality visualizations and documentation for academic research</li>
             </ul>
-
           </div>
         </div>
-
-        <!-- Column 2: Dokumentasi -->
         <div class="section">
           <div class="card">
             <h2 class="h2">Documentation</h2>
@@ -136,8 +123,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Row 2: Tools used (full width) -->
       <div class="section">
         <div class="card" style="margin-top:18px;">
           <h2 class="h2">Tools Used</h2>
@@ -161,15 +146,12 @@
       </div>
     </div>
   </main>
-
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
       <span class="muted">© <span id="year"></span> Raihan Rizqullah</span>
       <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="small">Back to top ↑</a>
     </div>
   </footer>
-
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <div class="lightbox-inner">
       <img id="lbImg" src="" alt="preview" />
@@ -183,32 +165,17 @@
       </div>
     </div>
   </div>
-
   <script>
-    // Year
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle
-    const html = document.documentElement;
-    const themeBtn = document.getElementById('themeToggle');
-    themeBtn.addEventListener('click', ()=>{
-      const cur = html.getAttribute('data-theme');
-      html.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
-      localStorage.setItem('theme', html.getAttribute('data-theme'));
-    });
-    const saved = localStorage.getItem('theme');
-    if(saved){ html.setAttribute('data-theme', saved); }
-
-    // Lightbox
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
     const lbCaption = document.getElementById('lbCaption');
     const lbPrev = document.getElementById('lbPrev');
     const lbNext = document.getElementById('lbNext');
     const lbClose = document.getElementById('lbClose');
-
     let currentThumbs = []; let currentIndex = 0;
-
     function openLightbox(thumbs, index){
       currentThumbs = thumbs; currentIndex = index;
       const t = currentThumbs[currentIndex];
@@ -221,14 +188,12 @@
       const t = currentThumbs[currentIndex];
       lbImg.src = t.src; lbCaption.textContent = t.alt || '';
     }
-
     document.querySelectorAll('[data-gallery]').forEach(grid=>{
       const thumbs = Array.from(grid.querySelectorAll('img'));
       thumbs.forEach((img, i)=>{
         img.addEventListener('click',()=>openLightbox(thumbs, i));
       });
     });
-
     lbPrev.addEventListener('click',()=>step(-1));
     lbNext.addEventListener('click',()=>step(1));
     lbClose.addEventListener('click',()=>lb.classList.remove('open'));
@@ -240,22 +205,19 @@
       if(e.key==='ArrowRight') step(1);
     });
 
-    // View All functionality
     const viewAllBtn = document.getElementById('viewAllBtn');
     const gallery = document.querySelector('[data-gallery]');
     const allImages = gallery.querySelectorAll('img');
-    
-    // Hide button if 4 or fewer images
+
     if(allImages.length <= 4) {
       viewAllBtn.classList.add('hidden');
     }
-    
     viewAllBtn.addEventListener('click', () => {
       const isShowingAll = gallery.classList.contains('show-all');
       if(isShowingAll) {
         gallery.classList.remove('show-all');
         viewAllBtn.textContent = 'View All Photos';
-        // Scroll back to gallery
+
         gallery.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       } else {
         gallery.classList.add('show-all');
