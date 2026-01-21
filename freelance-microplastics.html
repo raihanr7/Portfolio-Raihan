@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project: Palapa Ring Dashboard Map</title>
+  <title>Project: Microplastics Modelling</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css" />
   <style>
@@ -80,9 +80,8 @@
 
   <header class="hero">
     <div class="container">
-      <p class="small muted">Professional • Telkom Indonesia</p>
-      <h1 class="h1">Palapa Ring Project Dashboard Map</h1>
-      <p class="small muted" style="margin-top:4px;">Part of <a href="experience-telkom.html" style="color:var(--accent1);text-decoration:underline">Digistar Class Intern: Fresh Graduate Batch 1</a></p>
+      <p class="small muted">Freelance</p>
+      <h1 class="h1">Microplastics Transport Modelling</h1>
     </div>
   </header>
 
@@ -95,28 +94,30 @@
           <div class="card">
             <h2 class="h2">Overview</h2>
             <p class="small" style="margin-top:8px; text-align:justify">
-              During my internship at <a href="experience-telkom.html" style="color:var(--accent1);text-decoration:underline">Telkom Indonesia</a>, I was assigned to develop this <b>interactive web-map dashboard</b> 
-              to enable my unit to <b>monitor numerous services in a single dashboard</b>. This dashboard consolidates service 
-              status, locations, performance, problems, and other relevant information, significantly improving operational efficiency.
+              Provided <b>marine modelling services</b> for a client's thesis research, focusing on <b>microplastics transport modelling</b> 
+              in <b>Cilacap waters</b> using <b>MIKE Zero</b> software. This advanced hydrodynamic and particle tracking model enabled 
+              simulation of microplastics movement patterns, helping to understand the distribution and fate of marine plastic pollution 
+              in coastal environments.
             </p>
-            <p class="small" style="margin-top:8px; text-align:justify; color:var(--accent)">
-              <b>GitHub Link:</b> <a href="https://github.com/raihanr7/paringproject.git" style="color:var(--accent1);text-decoration:underline">https://github.com/raihanr7/paringproject.git</a>
-            </p>
-            <p class="small" style="margin-top:8px; text-align:justify; font-style:italic; color:var(--muted)">
-              <b>Note:</b> Some services and features are not shown in the documentation and GitHub due to <b>Non-Disclosure Agreement (NDA)</b> restrictions.
-            </p>
+            
 
-            <h2 class="h2" style="margin-top:14px;">Development Process</h2>
+            <h2 class="h2" style="margin-top:14px;">Modelling Workflow</h2>
             <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
-              <li><b>Planning & Data Preparation</b> - Analyzed unit needs, gathered service data (coordinates, descriptions, status), and consulted with experts for technical guidance and best practices</li>
-              <li><b>Database Design & Migration</b> - Cleaned and processed data in <b>PostgreSQL</b>, then migrated to <b>Supabase</b> for cloud-based storage and real-time access</li>
-              <li><b>Backend Development</b> - Built and using <b>Python Flask API</b> to handle data queries, service status updates, and real-time monitoring</li>
-              <li><b>Frontend & Map Integration</b> - Developed interactive web interface with map visualization using <b>HTML, CSS, and JavaScript</b> for geospatial data display</li>
-              <li><b>Testing & Deployment</b> - Conducted testing, trial and error, gathered unit feedback, and deployed the dashboard for production use</li>
+              <li><b>Data Collection & Preparation</b> - Gathered oceanographic data such as wind speed, wind direction, bathymetry, tides, and sea temperature of Cilacap waters</li>
+              <li><b>Model Setup</b> - Configured <b>MIKE Zero hydrodynamic model</b> with appropriate mesh resolution, boundary conditions, and forcing parameters</li>
+              <li><b>Particle Tracking</b> - Implemented microplastics particle tracking module to simulate transport and dispersion patterns</li>
+              <li><b>Simulation & Analysis</b> - Ran model scenarios to predict microplastics movement under different environmental conditions and microplastics type</li>
+              <li><b>Visualization & Reporting</b> - Created spatial maps and analysis results using QGIS and delivered comprehensive documentation</li>
             </ul>
-            <p class="small" style="margin-top:8px; font-style:Bold; color:var(--muted)">
-              *Leveraged AI tools (ChatGPT) throughout the development process for code optimization, debugging, and problem-solving.
-            </p>
+
+            <h2 class="h2" style="margin-top:14px;">Results</h2>
+            <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
+              <li>Successfully simulated microplastics transport patterns in Cilacap coastal waters</li>
+              <li>Identified key accumulation zones and dispersion pathways for marine plastic pollution</li>
+              <li>Generated spatial distribution maps showing predicted microplastics concentration</li>
+              <li>Provided actionable insights for coastal management and pollution mitigation strategies</li>
+            </ul>
+
           </div>
         </div>
 
@@ -125,10 +126,11 @@
           <div class="card">
             <h2 class="h2">Documentation</h2>
             <div class="gallery" data-gallery>
-              <img src="assets/img/project-paring/1.png" alt="Dashboard overview">
-              <img src="assets/img/project-paring/2.png" alt="Map interface view">
-              <img src="assets/img/project-paring/3.png" alt="Rekonsiliasi">
-              <img src="assets/img/project-paring/4.png" alt="Rekonsiliasi">
+              <img src="assets/img/project-microplastics/1.png" alt="Processing">
+              <img src="assets/img/project-microplastics/2.png" alt="Processing">
+              <img src="assets/img/project-microplastics/3.png" alt="Layouting">
+              <img src="assets/img/project-microplastics/4.jpeg" alt="Processing">
+              <img src="assets/img/project-microplastics/5.png" alt="Output File">
             </div>
             <button class="view-all-btn" id="viewAllBtn">View All Photos</button>
           </div>
@@ -138,34 +140,21 @@
       <!-- Row 2: Tools used (full width) -->
       <div class="section">
         <div class="card" style="margin-top:18px;">
-          <h2 class="h2">Tools used</h2>
+          <h2 class="h2">Tools Used</h2>
           <div class="small" style="margin-top:10px;">
-            <!-- Row 1: Development Tools -->
-            <div style="margin-bottom:12px">
-              <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Development Tools</div>
-              <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <i class="si si-python" style="font-size:1rem;color:#3776AB"></i>Python
-                </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <i class="si si-postgresql" style="font-size:1rem;color:#4169E1"></i>PostgreSQL
-                </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <img src="https://img.icons8.com/?size=100&id=grZaE9tjqDyr&format=png&color=000000" style="width:1rem;height:1rem" alt="ChatGPT">Supabase
-                </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <i class="si si-html5" style="font-size:1rem;color:#E34F26"></i>HTML/CSS/JS
-                </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" style="width:1rem;height:1rem" alt="VS Code">VS Code
-                </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" style="width:1rem;height:1rem" alt="ChatGPT">ChatGPT
-                </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/QGIS_logo%2C_2017.svg" style="width:1rem;height:1rem" alt="QGIS">QGIS
-                </span>
-              </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+              <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <i class="fa-solid fa-water" style="font-size:1rem;color:#0ea5e9"></i>MIKE Zero
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/QGIS_logo%2C_2017.svg" style="width:1rem;height:1rem" alt="QGIS">QGIS
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <i class="fa-solid fa-file-excel" style="font-size:1rem;color:#1d7043"></i>Excel
+              </span>
+              <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <i class="fa-solid fa-map" style="font-size:1rem;color:#4f46e5"></i>Spatial Modelling
+              </span>
             </div>
           </div>
         </div>
