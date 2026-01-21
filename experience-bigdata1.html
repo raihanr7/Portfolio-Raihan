@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Computer and Big Data Teaching Assistant Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css" />
+  <style>
+    :root{
+      --bg: #ffffff; --text:#111; --muted:#6b7280; --card:#ffffff; --border:#e5e7eb; --accent1:#4f46e5; --accent2:#0ea5e9;
+      --shadow:0 4px 20px rgba(0,0,0,.06)
+    }
+    [data-theme="dark"]{
+      --bg:#0a0a0a; --text:#f3f4f6; --muted:#9ca3af; --card:#0f1115; --border:#1f2937; --shadow:0 6px 30px rgba(0,0,0,.35)
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(960px,92vw);margin-inline:auto}
+    .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border);background:color-mix(in srgb, var(--bg) 70%, transparent)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
+    .brand{display:flex;gap:.5rem;align-items:center;font-weight:700}
+    .dot{width:24px;height:24px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);border-radius:999px;padding:.4rem .9rem;background:transparent;cursor:pointer;font-size:.88rem}
+    .btn.primary{border-color:transparent;color:#fff;background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:var(--shadow)}
+    .muted{color:var(--muted)}
+    .hero{padding:40px 0 24px 0}
+    .h1{font-size:clamp(26px,3.4vw,40px);margin:6px 0 0 0;font-weight:800}
+    .h2{font-size:1.1rem;margin:0 0 4px 0;font-weight:600}
+    .pill{border:1px solid var(--border);padding:.18rem .6rem;border-radius:999px;font-size:.76rem;margin-right:4px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:768px){.grid-cols-2{grid-template-columns:2fr 1.2fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:18px}
+    .section{padding:12px 0}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--border);cursor:pointer}
+    .gallery:not(.show-all) img:nth-child(n+5){display:none}
+    .view-all-btn{margin-top:12px;width:100%;padding:.65rem;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer;font-size:.88rem;font-weight:500;transition:all .2s ease}
+    .view-all-btn:hover{background:var(--accent1);color:#fff;border-color:var(--accent1);transform:translateY(-1px);box-shadow:var(--shadow)}
+    .view-all-btn.hidden{display:none}
+    .tech-icon{font-size:1.1rem;margin-right:.35rem;vertical-align:middle}
+    .pill .tech-icon{font-size:.85rem;margin-right:.25rem}
+    .tech-item{display:flex;align-items:center;margin-bottom:.4rem}
+    .tech-item .tech-icon{font-size:1.3rem;margin-right:.5rem}
+    /* Brand colors for each tech */
+    .si-microsoftexcel{color:#217346}
+    .si-python{color:#3776AB}
+    .si-postgresql{color:#4169E1}
+    .si-supabase{color:#3ECF8E}
+    .si-visualstudiocode{color:#007ACC}
+    .si-openai{color:#10A37F}
+    .si-googlemaps{color:#4285F4}
+    .si-html5{color:#E34F26}
+    .small{font-size:.82rem}
+    .footer{border-top:1px solid var(--border);padding:20px 0;margin-top:40px}
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.76);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
+    .lightbox.open{display:flex}
+    .lightbox-inner{max-width:min(1000px,92vw);width:100%}
+    .lightbox img{width:100%;height:auto;border-radius:12px;border:1px solid #000}
+    .lightbox-bar{margin-top:10px;display:flex;align-items:center;justify-content:space-between;color:#fff}
+    .kbd{border:1px solid #fff3;border-radius:8px;padding:.35rem .6rem}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html#experience" class="brand">
+        <span class="dot"></span><span>Raihan Rizqullah's Portfolio</span>
+      </a>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a href="index.html#experience" class="btn">← Back to Experience</a>
+        <button id="themeToggle" class="btn" title="Toggle theme">
+          <span class="dot" style="width:12px;height:12px"></span> Theme
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <p class="small muted">Professional • Universitas Padjadjaran</p>
+      <h1 class="h1">Computer & Big Data Teaching Assistant</h1>
+      <p class="small muted" style="margin-top:4px;">Mar - Jun 2022 — Teaching Assistant — Department of Marine Science, Universitas Padjadjaran</p>
+      <div style="margin-top:10px;">
+        <a href="assets/img/bigdata2022/2.png" target="_blank" class="btn primary">
+          Sertifikat
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Row 1: Overview + Dokumentasi (2 columns) -->
+      <div class="grid grid-cols-2">
+        <!-- Column 1: Overview -->
+        <div class="section">
+          <div class="card">
+            <h2 class="h2">Overview</h2>
+            <p class="small" style="margin-top:8px; text-align:justify">
+              <b>Teaching Assistant</b> for the <b>Computer & Big Data</b> practicum course. This lab session provided 
+              hands-on application of theoretical concepts taught in lectures, enabling <b>Marine Science students (Class of 2021)</b> 
+              to develop practical skills in <b>Python programming and data processing</b> through direct and guided practice.
+            </p>
+
+            <h2 class="h2" style="margin-top:14px;">Main Responsibilities:</h2>
+            <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
+              <li>Delivered a <b>weekly class sessions</b> to <b>Marine Science students class of 2021</b>, covering in fundamental 
+                  Python programming (Installing, data analysis libraries <b>(Pandas, NumPy)</b>, and data visualization <b>(Matplotlib)</b>)
+              <li><b>Facilitated a smooth learning experience</b> by providing <b>immediate, hands-on assistance</b> to students facing 
+                  technical hurdles, from library installation errors to logical flaws in their code</li>
+              <li>Designed and managed a <b>final group project</b> simulating a real-world data analysis workflow, where students 
+                  sourced datasets from <b>Kaggle</b>, performed visual analysis, and presented their findings by a <b>video presentation</b>.</li>
+            </ul>
+
+            <h2 class="h2" style="margin-top:14px;">Impact</h2>
+            <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
+              <li>Enhanced teaching and communication skills through explaining complex programming concepts to beginners</li>
+              <li>Developed patience and problem-solving abilities by troubleshooting diverse student coding challenges</li>
+              <li>Strengthened Python proficiency by preparing course materials and assisting with various data analysis tasks</li>
+              <li>Gained experience in curriculum design and hands-on technical mentoring</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 2: Dokumentasi -->
+        <div class="section">
+          <div class="card">
+            <h2 class="h2">Dokumentasi</h2>
+            <p class="small muted">Dokumentasi kegiatan praktikum</p>
+            <div class="gallery" data-gallery>
+              <img src="assets/img/bigdata2022/bigdata1.png" alt="Class Session 1">
+              <img src="assets/img/bigdata2022/bigdata2.png" alt="Class Session 2"> 
+            </div>
+            <button class="view-all-btn" id="viewAllBtn">View All Photos</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Tools used (full width) -->
+      <div class="section">
+        <div class="card" style="margin-top:18px;">
+          <h2 class="h2">Tools used</h2>
+          <div class="small" style="margin-top:10px;">
+            <!-- Row 1: Development & Analysis Tools -->
+            <div style="margin-bottom:12px">
+              <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Development & Analysis Tools</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <i class="si si-python" style="font-size:1rem;color:#3776AB"></i>Python
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" style="width:1rem;height:1rem" alt="Jupyter">Jupyter Notebook
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Spyder_logo.svg" style="width:1rem;height:1rem" alt="Spyder">Spyder
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" style="width:1rem;height:1rem" alt="VS Code">VS Code
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <img src="https://www.clipartmax.com/png/middle/349-3490136_anaconda-icon-anaconda-python-icon.png" style="width:1rem;height:1rem" alt="Anaconda">Anaconda
+                </span>
+              </div>
+            </div>
+
+            <!-- Row 2: Productivity & Collaboration -->
+            <div>
+              <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Productivity & Collaboration</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <i class="fa-solid fa-file-excel" style="font-size:1rem;color:#1d7043"></i>Excel
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <i class="fa-solid fa-file-powerpoint" style="font-size:1rem;color:#D24726"></i>PowerPoint
+                </span>
+                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <i class="fa-solid fa-video" style="font-size:1rem;color:#2D8CFF"></i>Zoom
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+      <span class="muted">© <span id="year"></span> Raihan Rizqullah</span>
+      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="small">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <img id="lbImg" src="" alt="preview" />
+      <div class="lightbox-bar small">
+        <span id="lbCaption"></span>
+        <div>
+          <button class="kbd" id="lbPrev">Prev</button>
+          <button class="kbd" id="lbNext">Next</button>
+          <button class="kbd" id="lbClose">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const html = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    themeBtn.addEventListener('click', ()=>{
+      const cur = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', cur === 'dark' ? 'light' : 'dark');
+      localStorage.setItem('theme', html.getAttribute('data-theme'));
+    });
+    const saved = localStorage.getItem('theme');
+    if(saved){ html.setAttribute('data-theme', saved); }
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    const lbClose = document.getElementById('lbClose');
+
+    let currentThumbs = []; let currentIndex = 0;
+
+    function openLightbox(thumbs, index){
+      currentThumbs = thumbs; currentIndex = index;
+      const t = currentThumbs[currentIndex];
+      lbImg.src = t.src; lbCaption.textContent = t.alt || '';
+      lb.classList.add('open');
+    }
+    function step(dir){
+      if(!currentThumbs.length) return;
+      currentIndex = Math.max(0, Math.min(currentThumbs.length-1, currentIndex + dir));
+      const t = currentThumbs[currentIndex];
+      lbImg.src = t.src; lbCaption.textContent = t.alt || '';
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(grid=>{
+      const thumbs = Array.from(grid.querySelectorAll('img'));
+      thumbs.forEach((img, i)=>{
+        img.addEventListener('click',()=>openLightbox(thumbs, i));
+      });
+    });
+
+    lbPrev.addEventListener('click',()=>step(-1));
+    lbNext.addEventListener('click',()=>step(1));
+    lbClose.addEventListener('click',()=>lb.classList.remove('open'));
+    lb.addEventListener('click',(e)=>{ if(e.target===lb) lb.classList.remove('open'); });
+    window.addEventListener('keydown',(e)=>{
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') lb.classList.remove('open');
+      if(e.key==='ArrowLeft') step(-1);
+      if(e.key==='ArrowRight') step(1);
+    });
+
+    // View All functionality
+    const viewAllBtn = document.getElementById('viewAllBtn');
+    const gallery = document.querySelector('[data-gallery]');
+    const allImages = gallery.querySelectorAll('img');
+    
+    // Hide button if 4 or fewer images
+    if(allImages.length <= 4) {
+      viewAllBtn.classList.add('hidden');
+    }
+    
+    viewAllBtn.addEventListener('click', () => {
+      const isShowingAll = gallery.classList.contains('show-all');
+      if(isShowingAll) {
+        gallery.classList.remove('show-all');
+        viewAllBtn.textContent = 'View All Photos';
+        // Scroll back to gallery
+        gallery.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        gallery.classList.add('show-all');
+        viewAllBtn.textContent = 'Show Less';
+      }
+    });
+  </script>
+</body>
+</html>
