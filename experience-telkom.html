@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,62 +8,302 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css" />
   <style>
-    :root{
-      --bg: #ffffff; --text:#111; --muted:#6b7280; --card:#ffffff; --border:#e5e7eb; --accent1:#4f46e5; --accent2:#0ea5e9;
-      --shadow:0 4px 20px rgba(0,0,0,.06)
+    :root {
+      --bg: #ffffff;
+      --text: #111;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --accent1: #4f46e5;
+      --accent2: #0ea5e9;
+      --shadow: 0 4px 20px rgba(0, 0, 0, .06)
     }
-    [data-theme="dark"]{
-      --bg:#0a0a0a; --text:#f3f4f6; --muted:#9ca3af; --card:#0f1115; --border:#1f2937; --shadow:0 6px 30px rgba(0,0,0,.35)
+
+    [data-theme="dark"] {
+      --bg: #0a0a0a;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --card: #0f1115;
+      --border: #1f2937;
+      --shadow: 0 6px 30px rgba(0, 0, 0, .35)
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(960px,92vw);margin-inline:auto}
-    .nav{position:sticky;top:0;z-index:40;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--border);background:color-mix(in srgb, var(--bg) 70%, transparent)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px}
-    .brand{display:flex;gap:.5rem;align-items:center;font-weight:700}
-    .dot{width:24px;height:24px;border-radius:999px;background:linear-gradient(90deg,var(--accent1),var(--accent2))}
-    .btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);border-radius:999px;padding:.4rem .9rem;background:transparent;cursor:pointer;font-size:.88rem}
-    .btn.primary{border-color:transparent;color:#fff;background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:var(--shadow)}
-    .muted{color:var(--muted)}
-    .hero{padding:40px 0 24px 0}
-    .h1{font-size:clamp(26px,3.4vw,40px);margin:6px 0 0 0;font-weight:800}
-    .h2{font-size:1.1rem;margin:0 0 4px 0;font-weight:600}
-    .pill{border:1px solid var(--border);padding:.18rem .6rem;border-radius:999px;font-size:.76rem;margin-right:4px}
-    .grid{display:grid;gap:18px}
-    @media(min-width:768px){.grid-cols-2{grid-template-columns:2fr 1.2fr}}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);padding:18px}
-    .section{padding:12px 0}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:10px}
-    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--border);cursor:pointer}
-    .gallery:not(.show-all) img:nth-child(n+5){display:none}
-    .view-all-btn{margin-top:12px;width:100%;padding:.65rem;border:1px solid var(--border);border-radius:10px;background:var(--card);color:var(--text);cursor:pointer;font-size:.88rem;font-weight:500;transition:all .2s ease}
-    .view-all-btn:hover{background:var(--accent1);color:#fff;border-color:var(--accent1);transform:translateY(-1px);box-shadow:var(--shadow)}
-    .view-all-btn.hidden{display:none}
-    .tech-icon{font-size:1.1rem;margin-right:.35rem;vertical-align:middle}
-    .pill .tech-icon{font-size:.85rem;margin-right:.25rem}
-    .tech-item{display:flex;align-items:center;margin-bottom:.4rem}
-    .tech-item .tech-icon{font-size:1.3rem;margin-right:.5rem}
-    
-    .si-microsoftexcel{color:#217346}
-    .si-python{color:#3776AB}
-    .si-postgresql{color:#4169E1}
-    .si-supabase{color:#3ECF8E}
-    .si-visualstudiocode{color:#007ACC}
-    .si-openai{color:#10A37F}
-    .si-googlemaps{color:#4285F4}
-    .si-html5{color:#E34F26}
-    .small{font-size:.82rem}
-    .footer{border-top:1px solid var(--border);padding:20px 0;margin-top:40px}
-    
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.76);display:none;align-items:center;justify-content:center;padding:20px;z-index:60}
-    .lightbox.open{display:flex}
-    .lightbox-inner{max-width:min(1000px,92vw);width:100%}
-    .lightbox img{width:100%;height:auto;border-radius:12px;border:1px solid #000}
-    .lightbox-bar{margin-top:10px;display:flex;align-items:center;justify-content:space-between;color:#fff}
-    .kbd{border:1px solid #fff3;border-radius:8px;padding:.35rem .6rem}
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .container {
+      width: min(960px, 92vw);
+      margin-inline: auto
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: saturate(180%) blur(8px);
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 70%, transparent)
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px
+    }
+
+    .brand {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+      font-weight: 700
+    }
+
+    .dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2))
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: .4rem .9rem;
+      background: transparent;
+      cursor: pointer;
+      font-size: .88rem
+    }
+
+    .btn.primary {
+      border-color: transparent;
+      color: #fff;
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      box-shadow: var(--shadow)
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .hero {
+      padding: 40px 0 24px 0
+    }
+
+    .h1 {
+      font-size: clamp(26px, 3.4vw, 40px);
+      margin: 6px 0 0 0;
+      font-weight: 800
+    }
+
+    .h2 {
+      font-size: 1.1rem;
+      margin: 0 0 4px 0;
+      font-weight: 600
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      padding: .18rem .6rem;
+      border-radius: 999px;
+      font-size: .76rem;
+      margin-right: 4px
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px
+    }
+
+    @media(min-width:768px) {
+      .grid-cols-2 {
+        grid-template-columns: 2fr 1.2fr
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 18px
+    }
+
+    .section {
+      padding: 12px 0
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 10px
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      cursor: pointer
+    }
+
+    .gallery:not(.show-all) img:nth-child(n+5) {
+      display: none
+    }
+
+    .view-all-btn {
+      margin-top: 12px;
+      width: 100%;
+      padding: .65rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      font-size: .88rem;
+      font-weight: 500;
+      transition: all .2s ease
+    }
+
+    .view-all-btn:hover {
+      background: var(--accent1);
+      color: #fff;
+      border-color: var(--accent1);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow)
+    }
+
+    .view-all-btn.hidden {
+      display: none
+    }
+
+    .tech-icon {
+      font-size: 1.1rem;
+      margin-right: .35rem;
+      vertical-align: middle
+    }
+
+    .pill .tech-icon {
+      font-size: .85rem;
+      margin-right: .25rem
+    }
+
+    .tech-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: .4rem
+    }
+
+    .tech-item .tech-icon {
+      font-size: 1.3rem;
+      margin-right: .5rem
+    }
+
+    .si-microsoftexcel {
+      color: #217346
+    }
+
+    .si-python {
+      color: #3776AB
+    }
+
+    .si-postgresql {
+      color: #4169E1
+    }
+
+    .si-supabase {
+      color: #3ECF8E
+    }
+
+    .si-visualstudiocode {
+      color: #007ACC
+    }
+
+    .si-openai {
+      color: #10A37F
+    }
+
+    .si-googlemaps {
+      color: #4285F4
+    }
+
+    .si-html5 {
+      color: #E34F26
+    }
+
+    .small {
+      font-size: .82rem
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      margin-top: 40px
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .76);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 60
+    }
+
+    .lightbox.open {
+      display: flex
+    }
+
+    .lightbox-inner {
+      max-width: min(1000px, 92vw);
+      width: 100%
+    }
+
+    .lightbox img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #000
+    }
+
+    .lightbox-bar {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff
+    }
+
+    .kbd {
+      border: 1px solid #fff3;
+      border-radius: 8px;
+      padding: .35rem .6rem
+    }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
@@ -93,27 +334,41 @@
           <div class="card">
             <h2 class="h2">Overview</h2>
             <p class="small" style="margin-top:8px; text-align:justify">
-              <b>Digistar Class Intern: Fresh Graduate Batch 1</b> is an internship program organized by <b>Telkom Indonesia</b>
-              for recent bachelor's degree graduates. Selected as a <b>Business Analyst</b> among 5,800+ total applicants. During this internship, 
-              I gained comprehensive experience in the telecommunications industry business operations, developed essential soft skills through classes 
-              (design thinking, communication, etc.), and enhanced technical capabilities through hard skill classes (artificial intelligence).
+              <b>Digistar Class Intern: Fresh Graduate Batch 1</b> is an internship program organized by <b>Telkom
+                Indonesia</b>
+              for recent bachelor's degree graduates. Selected as a <b>Business Analyst</b> among 5,800+ total
+              applicants. During this internship,
+              I gained comprehensive experience in the telecommunications industry business operations, developed
+              essential soft skills through classes
+              (design thinking, communication, etc.), and enhanced technical capabilities through hard skill classes
+              (artificial intelligence).
             </p>
             <h2 class="h2" style="margin-top:14px;">Main Responsibilities:</h2>
             <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
-              <li><b>Developed and deployed a full-stack <a href="freelance-paring.html" style="color:var(--accent1);text-decoration:underline">web map</a> application</b> that integrated with a cloud-based SQL database and a 
-                  Python (Flask) backend to serve an interactive HTML-based user interface, significantly <b>improving the team's 
+              <li><b>Developed and deployed a full-stack <a href="freelance-paring.html"
+                    style="color:var(--accent1);text-decoration:underline">web map</a> application</b> that integrated
+                with a cloud-based SQL database and a
+                Python (Flask) backend to serve an interactive HTML-based user interface, significantly <b>improving the
+                  team's
                   efficiency in monitoring data</b> through one web interface.</li>
-              <li>Conducted regular reconciliation and performance for services leased from 5+ partners, <b>validating</b> partner provided 
-                  documents and <b>monitoring</b> Service Level Agreement (SLA) to <b>ensure service quality and contractual accuracy</b>.</li>
-              <li>Reviewed business processes for Telkom products and assessed the performance of leased services, identifying 
-                  gaps and delivering recommendations to improve efficiency, cost, and SLA compliance.</li>
+              <li>Conducted regular reconciliation and performance for services leased from 5+ partners,
+                <b>validating</b> partner provided
+                documents and <b>monitoring</b> Service Level Agreement (SLA) to <b>ensure service quality and
+                  contractual accuracy</b>.</li>
+              <li>Reviewed business processes for Telkom products and assessed the performance of leased services,
+                identifying
+                gaps and delivering recommendations to improve efficiency, cost, and SLA compliance.</li>
             </ul>
             <h2 class="h2" style="margin-top:14px;">Impact</h2>
             <ul class="small" style="padding-left:18px;margin:6px 0 0 0;">
               <li>Gained comprehensive knowledge in telecommunications business operations and industry practices.</li>
-              <li>Developed understanding of document process flows, contract-based reconciliation procedures, document validation, SLA monitoring, and compliance requirements.</li>
-              <li>Developed understanding of basic AI and automation technologies, including RAG-based chatbot implementation.</li>
-              <li>Enhanced data processing and analysis skills through hands-on experience with real-world datasets.</li>
+              <li>Developed understanding of <b>basic Fiber Optic infrastructure</b> and <b>FO fault analysis</b>, enabling direct escalation of customer trouble tickets for faster resolution.</li>
+              <li>Developed understanding of document process flows, contract-based reconciliation procedures, document
+                validation, SLA monitoring, and compliance requirements.</li>
+              <li>Developed understanding of basic AI and automation technologies, including RAG-based chatbot
+                implementation.</li>
+              <li>Enhanced data processing and analysis skills through hands-on experience with real-world datasets.
+              </li>
               <li>Acquired full-stack development capabilities for building data-driven applications web map</li>
             </ul>
           </div>
@@ -143,36 +398,48 @@
             <div style="margin-bottom:12px">
               <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Development Tools</div>
               <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="si si-python" style="font-size:1rem;color:#3776AB"></i>Python
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="si si-postgresql" style="font-size:1rem;color:#4169E1"></i>PostgreSQL
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="si si-html5" style="font-size:1rem;color:#E34F26"></i>HTML/CSS/JS
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" style="width:1rem;height:1rem" alt="VS Code">VS Code
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                    style="width:1rem;height:1rem" alt="VS Code">VS Code
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" style="width:1rem;height:1rem" alt="ChatGPT">ChatGPT
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg"
+                    style="width:1rem;height:1rem" alt="ChatGPT">ChatGPT
                 </span>
               </div>
             </div>
             <div style="margin-bottom:12px">
-              <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Data & Productivity</div>
+              <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Data & Productivity
+              </div>
               <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="fa-solid fa-file-excel" style="font-size:1rem;color:#1d7043"></i>Excel
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="fa-solid fa-file-word" style="font-size:1rem;color:#2B579A"></i>Word
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="fa-solid fa-file-powerpoint" style="font-size:1rem;color:#D24726"></i>PowerPoint
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="fa-solid fa-palette" style="font-size:1rem;color:#00C4CC"></i>Canva
                 </span>
               </div>
@@ -180,10 +447,12 @@
             <div>
               <div style="font-size:.75rem;color:var(--muted);margin-bottom:6px;font-weight:600">Collaboration</div>
               <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center">
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="fa-brands fa-microsoft" style="font-size:1rem;color:#5E5E5E"></i>Teams
                 </span>
-                <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
+                <span
+                  style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;font-size:.82rem">
                   <i class="fa-solid fa-video" style="font-size:1rem;color:#2D8CFF"></i>Zoom
                 </span>
               </div>
@@ -223,45 +492,45 @@
     const lbNext = document.getElementById('lbNext');
     const lbClose = document.getElementById('lbClose');
     let currentThumbs = []; let currentIndex = 0;
-    function openLightbox(thumbs, index){
+    function openLightbox(thumbs, index) {
       currentThumbs = thumbs; currentIndex = index;
       const t = currentThumbs[currentIndex];
       lbImg.src = t.src; lbCaption.textContent = t.alt || '';
       lb.classList.add('open');
     }
-    function step(dir){
-      if(!currentThumbs.length) return;
-      currentIndex = Math.max(0, Math.min(currentThumbs.length-1, currentIndex + dir));
+    function step(dir) {
+      if (!currentThumbs.length) return;
+      currentIndex = Math.max(0, Math.min(currentThumbs.length - 1, currentIndex + dir));
       const t = currentThumbs[currentIndex];
       lbImg.src = t.src; lbCaption.textContent = t.alt || '';
     }
-    document.querySelectorAll('[data-gallery]').forEach(grid=>{
+    document.querySelectorAll('[data-gallery]').forEach(grid => {
       const thumbs = Array.from(grid.querySelectorAll('img'));
-      thumbs.forEach((img, i)=>{
-        img.addEventListener('click',()=>openLightbox(thumbs, i));
+      thumbs.forEach((img, i) => {
+        img.addEventListener('click', () => openLightbox(thumbs, i));
       });
     });
-    lbPrev.addEventListener('click',()=>step(-1));
-    lbNext.addEventListener('click',()=>step(1));
-    lbClose.addEventListener('click',()=>lb.classList.remove('open'));
-    lb.addEventListener('click',(e)=>{ if(e.target===lb) lb.classList.remove('open'); });
-    window.addEventListener('keydown',(e)=>{
-      if(!lb.classList.contains('open')) return;
-      if(e.key==='Escape') lb.classList.remove('open');
-      if(e.key==='ArrowLeft') step(-1);
-      if(e.key==='ArrowRight') step(1);
+    lbPrev.addEventListener('click', () => step(-1));
+    lbNext.addEventListener('click', () => step(1));
+    lbClose.addEventListener('click', () => lb.classList.remove('open'));
+    lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('open'); });
+    window.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') lb.classList.remove('open');
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
     });
 
     const viewAllBtn = document.getElementById('viewAllBtn');
     const gallery = document.querySelector('[data-gallery]');
     const allImages = gallery.querySelectorAll('img');
 
-    if(allImages.length <= 4) {
+    if (allImages.length <= 4) {
       viewAllBtn.classList.add('hidden');
     }
     viewAllBtn.addEventListener('click', () => {
       const isShowingAll = gallery.classList.contains('show-all');
-      if(isShowingAll) {
+      if (isShowingAll) {
         gallery.classList.remove('show-all');
         viewAllBtn.textContent = 'View All Photos';
 
@@ -273,4 +542,5 @@
     });
   </script>
 </body>
+
 </html>
